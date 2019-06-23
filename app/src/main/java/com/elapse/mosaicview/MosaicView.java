@@ -7,7 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
-import android.icu.lang.UCharacter;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
@@ -89,13 +88,16 @@ public class MosaicView extends android.support.v7.widget.AppCompatImageView {
 //        super.onDraw(canvas);
         switch (mosaicType){
             case 0:
-                mSrcRect1.set();
+                mSrcRect1.set(0,0,b1.getWidth(),b1.getHeight());
                 mDestRect1.set(0,0,totalWidth/2,totalHeight/2);
-                mSrcRect2 .set();
+
+                mSrcRect2 .set(0,0,b2.getWidth(),b2.getHeight());
                 mDestRect2.set(totalWidth/2,0,totalWidth,totalHeight/2);
-                mSrcRect3 .set();
+
+                mSrcRect3 .set(0,0,b3.getWidth(),b3.getHeight());
                 mDestRect3.set(0,totalHeight/2,totalWidth/2,totalHeight);
-                mSrcRect4 .set();
+
+                mSrcRect4 .set(0,0,b4.getWidth(),b4.getHeight());
                 mDestRect4 .set(totalWidth/2,totalHeight/2,totalWidth,totalHeight);
                 break;
             case 1:
